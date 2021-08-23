@@ -10,11 +10,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install library
 RUN apt-get -y clean \
      && apt-get -y update \
-     && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git vim screen
+     && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git vim screen \
 
 # huge page 
 #RUN sudo bash -c "echo vm.nr_hugepages=2560 >> /etc/sysctl.conf"
-RUN sudo sysctl -w vm.nr_hugepages=2560
+    && RUN sudo sysctl -w vm.nr_hugepages=2560
 
 
 # workdir /xdag_workspace/
@@ -23,9 +23,8 @@ WORKDIR /xdag_workspace/
 # xdag clone
 RUN git clone https://github.com/XDagger/xdag.git \ 
     && cd xdag \
-    && cd secp256k1 && bash ./autogen.sh && ./configure && make && sudo make install
-
-RUN cd xdag \
+    && cd secp256k1 && bash ./autogen.sh && ./configure && make && sudo make install \
+    && cd .. \ 
     && mkdir build && cd build && cmake .. && make
 
 WORKDIR /xdag_workspace/xdag/build/
