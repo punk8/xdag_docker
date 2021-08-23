@@ -19,7 +19,10 @@ docker build -t <images_name> .
 键盘输入
 
 ```shell
-ctrl+d
+退出时如果想继续运行
+ctrl+p，ctrl+q
+如果不想继续运行
+ctrl+d 或输入 exit
 ```
 
 #### Restart container
