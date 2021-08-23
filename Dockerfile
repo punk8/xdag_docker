@@ -8,7 +8,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 #RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
 
 # install library
-RUNsed apt-get -y clean \
+RUN apt-get -y clean \
      && apt-get -y update \
      && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git vim screen
 
