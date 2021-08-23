@@ -1,4 +1,4 @@
-### Run xdag by docker
+## Run xdag by docker
 
 #### Build images
 
@@ -18,12 +18,10 @@ docker run -it --privileged --network host --name <container_name> <images_name>
 
 #### Exit container
 
-键盘输入
-
 ```shell
-退出时如果想继续运行
+退出时如果想继续，键盘输入
 1. ctrl+p -> 2. ctrl+q
-如果不想继续运行
+如果不想继续运行，键盘输入
 ctrl+d 或输入 exit
 ```
 
@@ -41,7 +39,7 @@ docker start 33e16f0837f3
 docker attach 33e16f0837f3
 ```
 
-#### Run
+#### Run xdag
 
 1. 在容器内更新netdb
 
@@ -49,7 +47,7 @@ docker attach 33e16f0837f3
 netdb-white-testnet.txt netdb-testnet.txt
 ```
 
-1. 运行xdag
+2. 运行xdag
 
 ```shell
  ./xdag -t -v 7 -p 0.0.0.0:<node-port> -P 0.0.0.0:<pool-port>:4096:128:128:5:5:5:5 -rpc-enable -rpc-port <rpc-port> -randomx f -disable-refresh
