@@ -11,7 +11,7 @@ docker build -t <images_name> . --network host
 #### Run container
 
 ```shell
- docker run -it --privileged --network host --name <container_name> <images_name> /bin/bash
+docker run -it --privileged --network host --name <container_name> <images_name> /bin/bash 
 ```
 
 #### Exit container
@@ -37,6 +37,20 @@ docker ps -a
 #33e16f0837f3   xdag:0.1   "/bin/bash"   4 minutes ago   Exited (0) 38 seconds ago             xdag_01
 docker start 33e16f0837f3
 docker attach 33e16f0837f3
+```
+
+#### Run
+
+1. 在容器内更新netdb
+
+```shell
+netdb-white-testnet.txt netdb-testnet.txt
+```
+
+1. 运行xdag
+
+```shell
+ ./xdag -t -v 7 -p 0.0.0.0:<node-port> -P 0.0.0.0:<pool-port>:4096:128:128:5:5:5:5 -rpc-enable -rpc-port <rpc-port> -randomx f -disable-refresh
 ```
 
 
