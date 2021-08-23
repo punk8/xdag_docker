@@ -10,11 +10,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 # install library
 RUNsed apt-get -y clean \
      && apt-get -y update \
-     && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git vim
+     && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git vim screen
 
 # huge page 
-RUN sudo bash -c "echo vm.nr_hugepages=2560 >> /etc/sysctl.conf"
-
+#RUN sudo bash -c "echo vm.nr_hugepages=2560 >> /etc/sysctl.conf"
+RUN sudo sysctl -w vm.nr_hugepages=2560
 
 
 # workdir /xdag-testnet/
