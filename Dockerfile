@@ -17,8 +17,8 @@ RUN apt-get -y clean \
 RUN sudo sysctl -w vm.nr_hugepages=2560
 
 
-# workdir /xdag-testnet/
-WORKDIR /xdag-testnet/
+# workdir /xdag_workspace/
+WORKDIR /xdag_workspace/
 
 # xdag clone
 RUN git clone https://github.com/XDagger/xdag.git \ 
@@ -28,7 +28,7 @@ RUN git clone https://github.com/XDagger/xdag.git \
 RUN cd xdag \
     && mkdir build && cd build && cmake .. && make
 
-WORKDIR /xdag-testnet/xdag/build/
+WORKDIR /xdag_workspace/xdag/build/
 COPY netdb* ./
 COPY dnet_keys.bin ./
 
