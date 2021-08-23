@@ -4,9 +4,11 @@ FROM ubuntu:20.04
 ENV LANG=C.UTF-8
 ENV DEBIAN_FRONTEND=noninteractive
 
+# aliyun source
+#RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list
+
 # install library
-RUN sed -i s@/archive.ubuntu.com/@/mirrors.aliyun.com/@g /etc/apt/sources.list \
-     && apt-get -y clean \
+RUNsed apt-get -y clean \
      && apt-get -y update \
      && apt-get install -y sudo cmake gcc build-essential pkg-config libssl-dev libgmp-dev libtool libsecp256k1-dev librandomx-dev git
 
