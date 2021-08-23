@@ -14,7 +14,7 @@ RUN apt-get -y clean \
 
 # huge page 
 #RUN sudo bash -c "echo vm.nr_hugepages=2560 >> /etc/sysctl.conf"
-    && RUN sudo sysctl -w vm.nr_hugepages=2560
+    && sudo sysctl -w vm.nr_hugepages=2560
 
 
 # workdir /xdag_workspace/
