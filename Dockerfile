@@ -29,8 +29,8 @@ RUN cd xdag \
     && mkdir build && cd build && cmake .. && make
 
 WORKDIR /xdag-testnet/xdag/build/
-COPY netdb* .
-COPY dnet_keys.bin .
+COPY netdb* ./
+COPY dnet_keys.bin ./
 
 
 
