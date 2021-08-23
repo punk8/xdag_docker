@@ -5,13 +5,13 @@
 2. 运行docker生成镜像
 
 ```shell
-docker build -t <images_name> .
+docker build -t <images_name> . --network host
 ```
 
 #### Run container
 
 ```shell
- docker run -it --privileged --name <container_name> <images_name> /bin/bash
+ docker run -it --privileged --network host --name <container_name> <images_name> /bin/bash
 ```
 
 #### Exit container
