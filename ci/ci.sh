@@ -74,5 +74,6 @@ scp $MODULE/src/main/resources/xdag-*.config $my_home/xdag_pool
 scp $MODULE/src/main/resources/netdb-*.txt $my_home/xdag_pool
 rm -rf $MODULE/dist
 scp ./service.sh $my_home/xdag_pool
+rm ./service.sh
 # 重启服务
 cd $my_home/xdag_pool && ./service.sh restart $MODULE
