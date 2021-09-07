@@ -6,10 +6,11 @@
    mkdir workspace && cd workspace
    ```
 
-2. 将本ci.sh文件复制进工作目录，执行
+2. 将本ci.sh跟service.sh文件复制进工作目录，执行
 
    ```shell
    chmod 777 ci.sh
+   chmod 777 service.sh
    ```
 
 3. 克隆xdagj项目

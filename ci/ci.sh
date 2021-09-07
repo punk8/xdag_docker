@@ -1,9 +1,9 @@
 echo "rebuild xdagj"
 my_home=$(cd "$(dirname "$0")"; pwd)
-#if [ $# -ne 1 ]; then
-#        echo "[`date`] usage : ./build.sh {[module]}"
-#        exit 1
-#fi
+if [ $# -lt 1 ]; then
+        echo "[`date`] usage : ./build.sh {[module]}"
+        exit 1
+fi
 #CMD=$1
 
 branch=${2:-'develop'}
@@ -44,6 +44,16 @@ if [ "$ret" != 0 ]; then
     exit 1
 fi
 
+# build 
+cd src/c 
+if [ ! -d 'build' ]; then
+    mkdir build
+    cd build 
+    cmake .. 
+    make
+fi
+
+cd $my_home/$MODULE
 mvn clean package -Dmaven.test.skip=true
 ret=$?
 if [ "$ret" != 0 ]; then
@@ -63,4 +73,6 @@ scp $MODULE/script/xdag.sh $my_home/xdag_pool
 scp $MODULE/src/main/resources/xdag-*.config $my_home/xdag_pool
 scp $MODULE/src/main/resources/netdb-*.txt $my_home/xdag_pool
 
-
+scp ./service.sh $my_home/xdag_pool
+# 重启服务
+cd $my_home/xdag_pool && ./service.sh restart $MODULE
