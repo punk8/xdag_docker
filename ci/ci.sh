@@ -69,6 +69,7 @@ if [ ! -d "$my_home/xdag_pool" ]; then
   mkdir $my_home/xdag_pool
 fi
 scp $MODULE/target/xdagj*.jar $my_home/xdag_pool
+rm -rf $MODULE/target
 scp $MODULE/script/xdag.sh $my_home/xdag_pool
 scp $MODULE/src/main/resources/xdag-*.config $my_home/xdag_pool
 scp $MODULE/src/main/resources/netdb-*.txt $my_home/xdag_pool
