@@ -1,3 +1,5 @@
+## ci自动化部署
+
 ### ci 使用
 
 1. 新建一个工程目录，并进入该目录
@@ -19,7 +21,7 @@
    git clone https://github.com/XDagger/xdagj.git
    ```
 
-4. 执行ci.sh，其中<branch>为你想要使用的分支名
+4. 执行ci.sh，其中<branch>为你想要使用的分支名，重启xdagj
 
    ```shell
    ./ci.sh xdagj <branch>
@@ -28,6 +30,8 @@
 
 
 ### xdag_pool中 service.sh 使用
+   
+service.sh 用于控制xdagj的启动关闭以及重启
 
 ```shell
 ./service.sh start 
