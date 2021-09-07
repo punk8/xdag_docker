@@ -18,10 +18,10 @@
    git clone https://github.com/XDagger/xdagj.git
    ```
 
-4. 执行ci.sh
+4. 执行ci.sh，其中<branch>为你想要使用的分支名
 
    ```shell
-   ./ci.sh
+   ./ci.sh xdagj <branch>
    ```
 
    
