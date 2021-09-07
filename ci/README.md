@@ -25,4 +25,16 @@
    ./ci.sh xdagj <branch>
    ```
 
-   
+
+
+
+service.sh 使用
+
+```shell
+./service.sh start 
+
+./service.sh stop
+
+./service.sh restart
+```
+
