@@ -26,7 +26,6 @@ RUN git clone https://github.com/XDagger/xdagj.git && cd xdagj \
         && cd ../../.. && mvn clean package -DskipTests \
         && cd .. && mkdir xdag_pool && cd xdag_pool \
         && cp ../xdagj/script/xdag.sh ./ \
-        && cp ../xdagj/script/service.sh ./ \
         && cp ../xdagj/target/xdagj-*.jar ./ \
         && cp ../xdagj/src/main/resources/xdag-*.config ./ \
         && cp ../xdagj/src/main/resources/netdb-*.txt ./ \
