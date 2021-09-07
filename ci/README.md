@@ -45,3 +45,4 @@ service.sh 用于控制xdagj的启动关闭以及重启
 ./service.sh restart
 ```
 
+**默认跑测试网，如需修改，请编辑service.sh 去掉 './xdag.sh -t' 中的'-t'**
