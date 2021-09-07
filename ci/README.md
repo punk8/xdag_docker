@@ -21,7 +21,7 @@
    git clone https://github.com/XDagger/xdagj.git
    ```
 
-4. 执行ci.sh，其中<branch>为你想要使用的分支名，重启xdagj
+4. 执行ci.sh，其中<branch>为你想要使用的分支名，可以自动启动xdagj
 
    ```shell
    ./ci.sh xdagj <branch>
