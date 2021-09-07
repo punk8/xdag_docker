@@ -27,7 +27,7 @@
 
 
 
-xdag_pool中 service.sh 使用
+### xdag_pool中 service.sh 使用
 
 ```shell
 ./service.sh start 
