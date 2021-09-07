@@ -26,7 +26,11 @@
    ```shell
    ./ci.sh xdagj <branch>
    ```
-
+5. 查询screen，可以看到xdagj已经在后台启动
+   ```shell
+   screen -ls
+   screen -r test
+   ```
 
 
 ### xdag_pool中 service.sh 使用
